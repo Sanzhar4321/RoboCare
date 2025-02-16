@@ -280,9 +280,11 @@ header::after {
 }
 .robot-tests .robot img {
   width: 300px;
-  height: 300px;
+  height: auto; 
   max-width: 100%;
+  object-fit: cover;
   border-radius: 8px;
   border: 2px solid #0A21C0; 
 }
+
 
