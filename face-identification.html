@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robocare Patients Software</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo">RoboCare</div>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="face-identification.html">Robocare Patients Software</a></li>
+    </ul>
+  </nav>
+  
+  <header>
+    <h1>Robocare Patients Software</h1>
+  </header>
+
+  <main class="main-container">
+    <div class="camera-card">
+      <video id="video" width="720" height="560" autoplay muted></video>
+      <canvas id="overlay"></canvas>
+    </div>
+  </main>
+
+  <div id="name-prompt" style="display: none;">
+    <label for="name">Enter Name:</label>
+    <input type="text" id="name" />
+    <button type="button" onclick="saveNewFace()">Save Face</button>
+  </div>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js/dist/face-api.min.js"></script>
+  <script defer src="script.js"></script>
+</body>
+</html>

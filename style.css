@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f7fa;  
+  font-family: 'Montserrat', sans-serif;
+  color: #2C2E3A;            
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(10, 33, 192, 0.5); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+nav .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0A21C0; 
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2C2E3A; 
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 3px;
+  background-color: #0A21C0; 
+  transition: width 0.3s ease;
+}
+
+/* Hover effect */
+nav ul li a:hover {
+  color: #050A44; 
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a.active {
+  color: #BB34BD; 
+}
+
+nav ul li a.active::after {
+  width: 100%;
+  background-color: #BB34BD;
+}
+
+
+header {
+  position: relative;
+  background-color: #f5f7fa;
+  color: #2C2E3A;
+  padding: 6rem 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+header .tagline {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #2C2E3A; 
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  background-color: #0A21C0; 
+  border-radius: 50%;
+  opacity: 0.15;
+}
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 160px;
+  height: 160px;
+  background-color: #BB34BD; 
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+
+.main-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.camera-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.camera-card video,
+.camera-card canvas {
+  display: block;
+}
+
+.camera-card canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; 
+}
+
+#name-prompt {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 2px solid #0A21C0;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+#name-prompt label {
+  font-weight: 600;
+  color: #2C2E3A;
+  font-size: 0.9rem;
+}
+
+#name-prompt input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  background: #f9f9f9;
+  color: #141619;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+#name-prompt input:focus {
+  border-color: #0A21C0;
+}
+
+#name-prompt button {
+  background-color: #0A21C0;
+  color: #ffffff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+#name-prompt button:hover {
+  background-color: #050A44;
+}
+
+#name-prompt button:active {
+  transform: scale(0.97);
+}
+
+/* Project Info Section */
+.project-info {
+  text-align: center;
+  padding: 0 2rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;   
+  line-height: 1.6;
+  color: #2C2E3A;      
+}
+.project-info p {
+  margin-bottom: 1.5rem;
+}
+
+.founders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.founder {
+  text-align: center;
+  max-width: 200px;
+}
+.founder img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover; 
+}
+.founder p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #050A44; 
+}
+
+.robot-tests {
+  text-align: center;
+  padding: 2rem;
+}
+.robot-tests h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0A21C0; 
+}
+.robot-tests .robot {
+  display: inline-block;
+  margin: 10px;
+}
+.robot-tests .robot img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 2px solid #0A21C0; 
+}
+
