@@ -229,7 +229,6 @@ header::after {
   transform: scale(0.97);
 }
 
-/* Project Info Section */
 .project-info {
   text-align: center;
   padding: 0 2rem 2rem;
@@ -280,6 +279,8 @@ header::after {
   margin: 10px;
 }
 .robot-tests .robot img {
+  width: 300px;
+  height: 300px;
   max-width: 100%;
   border-radius: 8px;
   border: 2px solid #0A21C0; 
